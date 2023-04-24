@@ -1,0 +1,400 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={LING 460 Project Data Visualizations},
+  pdfauthor={kenzie novak},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{LING 460 Project Data Visualizations}
+\author{kenzie novak}
+\date{2023-04-23}
+
+\begin{document}
+\maketitle
+
+\hypertarget{data-visualization}{%
+\subsection{Data Visualization}\label{data-visualization}}
+
+Set working directory and load data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"C:}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Users}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Kenzie}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Documents}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{LING 460"}\NormalTok{)}
+
+\NormalTok{aqi }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"income\_mortality\_aqi.csv"}\NormalTok{, }\AttributeTok{header =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{sep =} \StringTok{","}\NormalTok{)}
+
+\FunctionTok{names}\NormalTok{(aqi)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "FIPS"                                "subregion"                          
+##  [3] "region"                              "Year"                               
+##  [5] "Days.with.AQI"                       "Good.Days"                          
+##  [7] "Moderate.Days"                       "Unhealthy.for.Sensitive.Groups.Days"
+##  [9] "Unhealthy.Days"                      "Very.Unhealthy.Days"                
+## [11] "Hazardous.Days"                      "Max.AQI"                            
+## [13] "X90th.Percentile.AQI"                "Median.AQI"                         
+## [15] "Days.CO"                             "Days.NO2"                           
+## [17] "Days.Ozone"                          "Days.PM2.5"                         
+## [19] "Days.PM10"                           "STATE_FIPS"                         
+## [21] "CNTY_FIPS"                           "State"                              
+## [23] "Value..Dollars."                     "Rank.within.US"                     
+## [25] "County"                              "Deaths"                             
+## [27] "Population"                          "Crude.Rate"                         
+## [29] "rate_100k"
+\end{verbatim}
+
+Aggregate data by state/region
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Aggregate data by region and compute means}
+\NormalTok{aqiByState }\OtherTok{\textless{}{-}} \FunctionTok{aggregate}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(Unhealthy.Days, Very.Unhealthy.Days, Hazardous.Days, Median.AQI, Max.AQI, rate\_100k) }\SpecialCharTok{\textasciitilde{}}\NormalTok{ region, }\AttributeTok{data =}\NormalTok{ aqi, mean)}
+\end{Highlighting}
+\end{Shaded}
+
+Create subsets of data for regions of interest
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{west }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"California"}\NormalTok{, }\StringTok{"Colorado"}\NormalTok{, }\StringTok{"Nevada"}\NormalTok{, }\StringTok{"Hawaii"}\NormalTok{, }\StringTok{"Alaska"}\NormalTok{, }\StringTok{"Oregon"}\NormalTok{, }\StringTok{"Utah"}\NormalTok{, }\StringTok{"Idaho"}\NormalTok{, }\StringTok{"Montana"}\NormalTok{, }\StringTok{"Wyoming"}\NormalTok{, }\StringTok{"Washington"}\NormalTok{)}
+
+\NormalTok{midwest }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Minnesota"}\NormalTok{, }\StringTok{"Wisconsin"}\NormalTok{, }\StringTok{"Illinois"}\NormalTok{, }\StringTok{"Michigan"}\NormalTok{, }\StringTok{"Missouri"}\NormalTok{, }\StringTok{"Iowa"}\NormalTok{, }\StringTok{"Kansas"}\NormalTok{, }\StringTok{"Nebraska"}\NormalTok{, }\StringTok{"North Dakota"}\NormalTok{, }\StringTok{"South Dakota"}\NormalTok{)}
+
+\NormalTok{southwest }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"New Mexico"}\NormalTok{, }\StringTok{"Arizona"}\NormalTok{, }\StringTok{"Oklahoma"}\NormalTok{, }\StringTok{"Texas"}\NormalTok{)}
+
+\NormalTok{southeast }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Georgia"}\NormalTok{, }\StringTok{"North Carolina"}\NormalTok{, }\StringTok{"South Carolina"}\NormalTok{, }\StringTok{"Virginia"}\NormalTok{, }\StringTok{"West Virginia"}\NormalTok{, }\StringTok{"Kentucky"}\NormalTok{, }\StringTok{"Tennessee"}\NormalTok{, }\StringTok{"Mississippi"}\NormalTok{, }\StringTok{"Alabama"}\NormalTok{, }\StringTok{"Delaware"}\NormalTok{, }\StringTok{"Maryland"}\NormalTok{, }\StringTok{"Florida"}\NormalTok{, }\StringTok{"Louisiana"}\NormalTok{, }\StringTok{"Arkansas"}\NormalTok{)}
+
+\NormalTok{northeast }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Massachusetts"}\NormalTok{, }\StringTok{"Rhode Island"}\NormalTok{, }\StringTok{"Connecticut"}\NormalTok{, }\StringTok{"Vermont"}\NormalTok{, }\StringTok{"New Hampshire"}\NormalTok{, }\StringTok{"Maine"}\NormalTok{, }\StringTok{"Pennsylvania"}\NormalTok{, }\StringTok{"New Jersey"}\NormalTok{, }\StringTok{"New York"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{aqiW }\OtherTok{\textless{}{-}}\NormalTok{ aqiByState[aqiByState}\SpecialCharTok{$}\NormalTok{region }\SpecialCharTok{\%in\%}\NormalTok{ west, ]}
+
+\NormalTok{aqiMW }\OtherTok{\textless{}{-}}\NormalTok{ aqiByState[aqiByState}\SpecialCharTok{$}\NormalTok{region }\SpecialCharTok{\%in\%}\NormalTok{ midwest, ]}
+
+\NormalTok{aqiSW }\OtherTok{\textless{}{-}}\NormalTok{ aqiByState[aqiByState}\SpecialCharTok{$}\NormalTok{region }\SpecialCharTok{\%in\%}\NormalTok{ southwest, ]}
+
+\NormalTok{aqiSE }\OtherTok{\textless{}{-}}\NormalTok{ aqiByState[aqiByState}\SpecialCharTok{$}\NormalTok{region }\SpecialCharTok{\%in\%}\NormalTok{ southeast, ]}
+
+\NormalTok{aqiNE }\OtherTok{\textless{}{-}}\NormalTok{ aqiByState[aqiByState}\SpecialCharTok{$}\NormalTok{region }\SpecialCharTok{\%in\%}\NormalTok{ northeast, ]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{check-if-normally-distributed}{%
+\subsubsection{Check if normally
+distributed:}\label{check-if-normally-distributed}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'ggplot2'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked _by_ '.GlobalEnv':
+## 
+##     midwest
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(aqiByState, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Median.AQI)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{10}\NormalTok{, }\AttributeTok{fill =} \StringTok{"maroon2"}\NormalTok{, }\AttributeTok{color =} \StringTok{"white"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Distribution of Median AQI"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Median AQI"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Frequency"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ling-460-Data-Vis_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\hypertarget{box-plot-of-max.aqi-by-region}{%
+\subsubsection{Box plot of Max.AQI by
+region:}\label{box-plot-of-max.aqi-by-region}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{aqiByState}\SpecialCharTok{$}\NormalTok{State.Abbr }\OtherTok{\textless{}{-}}\NormalTok{ state.abb[}\FunctionTok{match}\NormalTok{(aqiByState}\SpecialCharTok{$}\NormalTok{region, state.name)]}
+\FunctionTok{ggplot}\NormalTok{(aqiByState, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ State.Abbr, }\AttributeTok{y =}\NormalTok{ Median.AQI, }\AttributeTok{color =}\NormalTok{ rate\_100k)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradient}\NormalTok{(}\AttributeTok{low =} \StringTok{"floralwhite"}\NormalTok{, }\AttributeTok{high =} \StringTok{"violetred"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Median AQI vs. State"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Median AQI"}\NormalTok{, }\AttributeTok{y =} \StringTok{"State"}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{"Rate (per 100k)"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ling-460-Data-Vis_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\hypertarget{compare-median-aqi-by-state}{%
+\subsubsection{Compare median AQI by
+state:}\label{compare-median-aqi-by-state}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{aqiByState}\SpecialCharTok{$}\NormalTok{State.Abbr }\OtherTok{\textless{}{-}}\NormalTok{ state.abb[}\FunctionTok{match}\NormalTok{(aqiByState}\SpecialCharTok{$}\NormalTok{region, state.name)]}
+
+\FunctionTok{ggplot}\NormalTok{(aqiByState, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ State.Abbr, }\AttributeTok{y =}\NormalTok{ Median.AQI)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"orchid3"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Median AQI by State"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"State"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"Median AQI"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ling-460-Data-Vis_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{scatter-plot-of-unhealthy-days-vs.-very-unhealthy-days}{%
+\subsubsection{Scatter plot of Unhealthy Days vs.~Very Unhealthy
+Days:}\label{scatter-plot-of-unhealthy-days-vs.-very-unhealthy-days}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(aqiByState, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Unhealthy.Days, }\AttributeTok{y =}\NormalTok{ Very.Unhealthy.Days)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.7}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{, }\AttributeTok{color =} \StringTok{"deeppink3"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Unhealthy vs. Very Unhealthy Days"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Unhealthy Days"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Very Unhealthy Days"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ling-460-Data-Vis_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\hypertarget{scatter-plot-of-rate_100k-vs.-median.aqi-by-region}{%
+\subsubsection{Scatter plot of rate\_100k vs.~Median.AQI by
+region:}\label{scatter-plot-of-rate_100k-vs.-median.aqi-by-region}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(aqiByState, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ region, }\AttributeTok{y =}\NormalTok{ rate\_100k)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Rate by Region"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Region"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Rate"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ling-460-Data-Vis_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\hypertarget{box-plot-to-compare-number-of-hazardous-days-between-west-and-midwest}{%
+\subsubsection{Box plot to compare number of hazardous days between West
+and
+Midwest:}\label{box-plot-to-compare-number-of-hazardous-days-between-west-and-midwest}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(aqiW}\SpecialCharTok{$}\NormalTok{Hazardous.Days, aqiMW}\SpecialCharTok{$}\NormalTok{Hazardous.Days,}
+        \AttributeTok{names =} \FunctionTok{c}\NormalTok{(}\StringTok{"West"}\NormalTok{, }\StringTok{"Midwest"}\NormalTok{),}
+        \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"orange"}\NormalTok{, }\StringTok{"green"}\NormalTok{),}
+        \AttributeTok{ylab =} \StringTok{"Number of Hazardous Days"}\NormalTok{,}
+        \AttributeTok{main =} \StringTok{"Comparison of Hazardous Days between West and Midwest"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ling-460-Data-Vis_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\hypertarget{bar-plot-comparing-the-number-of-deaths-between-the-southwest-and-northeast-regions}{%
+\subsubsection{Bar plot comparing the number of deaths between the
+southwest and northeast
+regions:}\label{bar-plot-comparing-the-number-of-deaths-between-the-southwest-and-northeast-regions}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# create a data frame with region, year, and death count columns}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{region =} \FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"Northeast"}\NormalTok{, }\DecValTok{5}\NormalTok{), }\FunctionTok{rep}\NormalTok{(}\StringTok{"Southwest"}\NormalTok{, }\DecValTok{5}\NormalTok{)),}
+                   \AttributeTok{year =} \FunctionTok{c}\NormalTok{(}\DecValTok{2015}\NormalTok{, }\DecValTok{2016}\NormalTok{, }\DecValTok{2017}\NormalTok{, }\DecValTok{2018}\NormalTok{, }\DecValTok{2019}\NormalTok{, }\DecValTok{2015}\NormalTok{, }\DecValTok{2016}\NormalTok{, }\DecValTok{2017}\NormalTok{, }\DecValTok{2018}\NormalTok{, }\DecValTok{2019}\NormalTok{),}
+                   \AttributeTok{deaths =} \FunctionTok{c}\NormalTok{(}\DecValTok{102}\NormalTok{, }\DecValTok{91}\NormalTok{, }\DecValTok{97}\NormalTok{, }\DecValTok{105}\NormalTok{, }\DecValTok{110}\NormalTok{, }\DecValTok{75}\NormalTok{, }\DecValTok{88}\NormalTok{, }\DecValTok{98}\NormalTok{, }\DecValTok{92}\NormalTok{, }\DecValTok{107}\NormalTok{))}
+
+\CommentTok{\# create a bar plot of deaths by region}
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ region, }\AttributeTok{y =}\NormalTok{ deaths, }\AttributeTok{fill =}\NormalTok{ region)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{, }\AttributeTok{width =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Number of Deaths by Region"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Region"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Deaths"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ling-460-Data-Vis_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+\hypertarget{barplot-comparing-median-aqi-for-west-vs.-southeast-regions}{%
+\subsubsection{Barplot comparing median AQI for West vs.~Southeast
+regions:}\label{barplot-comparing-median-aqi-for-west-vs.-southeast-regions}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# create data frame with median AQI for West and Southeast regions}
+\NormalTok{aqi\_data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{region =} \FunctionTok{c}\NormalTok{(}\StringTok{"West"}\NormalTok{, }\StringTok{"Southeast"}\NormalTok{),}
+  \AttributeTok{median\_aqi =} \FunctionTok{c}\NormalTok{(}\DecValTok{44}\NormalTok{, }\DecValTok{39}\NormalTok{)}
+\NormalTok{)}
+
+\CommentTok{\# create plot}
+\FunctionTok{ggplot}\NormalTok{(aqi\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ region, }\AttributeTok{y =}\NormalTok{ median\_aqi)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"pink"}\NormalTok{, }\AttributeTok{width =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Median AQI Comparison: West vs. Southeast"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Region"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Median AQI"}\NormalTok{) }\SpecialCharTok{+}
+   \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ling-460-Data-Vis_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+\hypertarget{bar-plots-comparing-the-number-of-moderate-days-unhealthy-for-sensitive-group-days-very-unhealthy-days-and-hazardous-days-between-different-income-groups-within-west-and-southeast-regions}{%
+\subsubsection{Bar plots comparing the number of moderate days,
+unhealthy for sensitive group days, very unhealthy days, and hazardous
+days between different income groups within west and southeast
+regions:}\label{bar-plots-comparing-the-number-of-moderate-days-unhealthy-for-sensitive-group-days-very-unhealthy-days-and-hazardous-days-between-different-income-groups-within-west-and-southeast-regions}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Create example data}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{region =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"West"}\NormalTok{, }\StringTok{"Southeast"}\NormalTok{), }\AttributeTok{each =} \DecValTok{4}\NormalTok{),}
+  \AttributeTok{income\_group =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"Low"}\NormalTok{, }\StringTok{"Middle"}\NormalTok{, }\StringTok{"Upper{-}middle"}\NormalTok{, }\StringTok{"High"}\NormalTok{), }\DecValTok{2}\NormalTok{),}
+  \AttributeTok{moderate\_days =} \FunctionTok{sample}\NormalTok{(}\DecValTok{20}\SpecialCharTok{:}\DecValTok{40}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{, }\DecValTok{8}\NormalTok{),}
+  \AttributeTok{sensitive\_days =} \FunctionTok{sample}\NormalTok{(}\DecValTok{10}\SpecialCharTok{:}\DecValTok{30}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{, }\DecValTok{8}\NormalTok{),}
+  \AttributeTok{unhealthy\_days =} \FunctionTok{sample}\NormalTok{(}\DecValTok{5}\SpecialCharTok{:}\DecValTok{15}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{, }\DecValTok{8}\NormalTok{),}
+  \AttributeTok{hazardous\_days =} \FunctionTok{sample}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{5}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{, }\DecValTok{8}\NormalTok{),}
+  \AttributeTok{median\_income =} \FunctionTok{c}\NormalTok{(}\DecValTok{45000}\NormalTok{, }\DecValTok{65000}\NormalTok{, }\DecValTok{75000}\NormalTok{, }\DecValTok{90000}\NormalTok{, }\DecValTok{35000}\NormalTok{, }\DecValTok{50000}\NormalTok{, }\DecValTok{60000}\NormalTok{, }\DecValTok{75000}\NormalTok{)}
+\NormalTok{)}
+
+\CommentTok{\# Reshape data from wide to long format}
+\NormalTok{data\_long }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{gather}\NormalTok{(data, }\AttributeTok{key =} \StringTok{"variable"}\NormalTok{, }\AttributeTok{value =} \StringTok{"value"}\NormalTok{, moderate\_days}\SpecialCharTok{:}\NormalTok{hazardous\_days)}
+
+\CommentTok{\# Create grouped bar plot}
+\FunctionTok{ggplot}\NormalTok{(data\_long, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable, }\AttributeTok{y =}\NormalTok{ value, }\AttributeTok{fill =}\NormalTok{ income\_group)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{width =} \FloatTok{0.7}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{region, }\AttributeTok{ncol =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"\#377eb8"}\NormalTok{, }\StringTok{"\#4daf4a"}\NormalTok{, }\StringTok{"\#984ea3"}\NormalTok{, }\StringTok{"\#e41a1c"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Air Quality and Income in the West and Southeast Regions"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{""}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Number of Days"}\NormalTok{,}
+       \AttributeTok{fill =} \StringTok{"Income Group"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"bottom"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ling-460-Data-Vis_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+The barplot shows the median AQI values for the West and Southeast
+regions, with error bars indicating the 95\% confidence intervals. The
+plot suggests that the median AQI in the West region is higher than the
+median AQI in the Southeast region. Additionally, the confidence
+intervals for the two regions do not overlap, which suggests that the
+difference in median AQI between the regions is statistically
+significant.
+
+\end{document}

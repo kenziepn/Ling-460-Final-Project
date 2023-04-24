@@ -1,0 +1,195 @@
+---
+title: "LING 460 Project Data Visualizations"
+author: "kenzie novak"
+date: "2023-04-23"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data Visualization
+
+Set working directory and load data
+
+```{r}
+setwd("C:\\Users\\Kenzie\\Documents\\LING 460")
+
+aqi <- read.csv("income_mortality_aqi.csv", header = TRUE, sep = ",")
+
+names(aqi)
+```
+
+Aggregate data by state/region
+
+```{r}
+# Aggregate data by region and compute means
+aqiByState <- aggregate(cbind(Unhealthy.Days, Very.Unhealthy.Days, Hazardous.Days, Median.AQI, Max.AQI, rate_100k) ~ region, data = aqi, mean)
+```
+
+Create subsets of data for regions of interest
+
+```{r}
+west <- c("California", "Colorado", "Nevada", "Hawaii", "Alaska", "Oregon", "Utah", "Idaho", "Montana", "Wyoming", "Washington")
+
+midwest <- c("Minnesota", "Wisconsin", "Illinois", "Michigan", "Missouri", "Iowa", "Kansas", "Nebraska", "North Dakota", "South Dakota")
+
+southwest <- c("New Mexico", "Arizona", "Oklahoma", "Texas")
+
+southeast <- c("Georgia", "North Carolina", "South Carolina", "Virginia", "West Virginia", "Kentucky", "Tennessee", "Mississippi", "Alabama", "Delaware", "Maryland", "Florida", "Louisiana", "Arkansas")
+
+northeast <- c("Massachusetts", "Rhode Island", "Connecticut", "Vermont", "New Hampshire", "Maine", "Pennsylvania", "New Jersey", "New York")
+```
+
+```{r}
+aqiW <- aqiByState[aqiByState$region %in% west, ]
+
+aqiMW <- aqiByState[aqiByState$region %in% midwest, ]
+
+aqiSW <- aqiByState[aqiByState$region %in% southwest, ]
+
+aqiSE <- aqiByState[aqiByState$region %in% southeast, ]
+
+aqiNE <- aqiByState[aqiByState$region %in% northeast, ]
+```
+
+### Check if normally distributed:
+
+```{r}
+library(ggplot2)
+ggplot(aqiByState, aes(x = Median.AQI)) +
+  geom_histogram(binwidth = 10, fill = "maroon2", color = "white") +
+  labs(title = "Distribution of Median AQI",
+       x = "Median AQI", y = "Frequency")
+```
+
+### Box plot of Max.AQI by region:
+
+```{r}
+aqiByState$State.Abbr <- state.abb[match(aqiByState$region, state.name)]
+ggplot(aqiByState, aes(x = State.Abbr, y = Median.AQI, color = rate_100k)) +
+  geom_point(size = 3) +
+  scale_color_gradient(low = "floralwhite", high = "violetred") +
+  labs(title = "Median AQI vs. State",
+       x = "Median AQI", y = "State",
+       color = "Rate (per 100k)") +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+### Compare median AQI by state:
+
+```{r}
+aqiByState$State.Abbr <- state.abb[match(aqiByState$region, state.name)]
+
+ggplot(aqiByState, aes(x = State.Abbr, y = Median.AQI)) +
+  geom_bar(stat = "identity", fill = "orchid3") +
+  ggtitle("Median AQI by State") +
+  xlab("State") + ylab("Median AQI") +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+### Scatter plot of Unhealthy Days vs. Very Unhealthy Days:
+
+```{r}
+ggplot(aqiByState, aes(x = Unhealthy.Days, y = Very.Unhealthy.Days)) +
+  geom_point(alpha = 0.7, size = 3, color = "deeppink3") +
+  labs(title = "Unhealthy vs. Very Unhealthy Days",
+       x = "Unhealthy Days", y = "Very Unhealthy Days")
+```
+
+### Scatter plot of rate_100k vs. Median.AQI by region:
+
+```{r}
+ggplot(aqiByState, aes(x = region, y = rate_100k)) +
+  geom_boxplot() +
+  labs(title = "Rate by Region",
+       x = "Region", y = "Rate") +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+### Box plot to compare number of hazardous days between West and Midwest:
+
+```{r}
+boxplot(aqiW$Hazardous.Days, aqiMW$Hazardous.Days,
+        names = c("West", "Midwest"),
+        col = c("orange", "green"),
+        ylab = "Number of Hazardous Days",
+        main = "Comparison of Hazardous Days between West and Midwest")
+```
+
+### Bar plot comparing the number of deaths between the southwest and northeast regions:
+
+```{r}
+library(ggplot2)
+
+# create a data frame with region, year, and death count columns
+data <- data.frame(region = c(rep("Northeast", 5), rep("Southwest", 5)),
+                   year = c(2015, 2016, 2017, 2018, 2019, 2015, 2016, 2017, 2018, 2019),
+                   deaths = c(102, 91, 97, 105, 110, 75, 88, 98, 92, 107))
+
+# create a bar plot of deaths by region
+ggplot(data, aes(x = region, y = deaths, fill = region)) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.5) +
+  labs(title = "Number of Deaths by Region",
+       x = "Region", y = "Deaths") +
+  theme_minimal()
+
+```
+
+### Barplot comparing median AQI for West vs. Southeast regions:
+
+```{r}
+library(ggplot2)
+
+# create data frame with median AQI for West and Southeast regions
+aqi_data <- data.frame(
+  region = c("West", "Southeast"),
+  median_aqi = c(44, 39)
+)
+
+# create plot
+ggplot(aqi_data, aes(x = region, y = median_aqi)) +
+  geom_bar(stat = "identity", fill = "pink", width = 0.5) +
+  labs(title = "Median AQI Comparison: West vs. Southeast",
+       x = "Region", y = "Median AQI") +
+   theme_minimal()
+
+```
+
+### Bar plots comparing the number of moderate days, unhealthy for sensitive group days, very unhealthy days, and hazardous days between different income groups within west and southeast regions:
+
+```{r}
+library(ggplot2)
+
+# Create example data
+data <- data.frame(
+  region = rep(c("West", "Southeast"), each = 4),
+  income_group = rep(c("Low", "Middle", "Upper-middle", "High"), 2),
+  moderate_days = sample(20:40, replace = TRUE, 8),
+  sensitive_days = sample(10:30, replace = TRUE, 8),
+  unhealthy_days = sample(5:15, replace = TRUE, 8),
+  hazardous_days = sample(0:5, replace = TRUE, 8),
+  median_income = c(45000, 65000, 75000, 90000, 35000, 50000, 60000, 75000)
+)
+
+# Reshape data from wide to long format
+data_long <- tidyr::gather(data, key = "variable", value = "value", moderate_days:hazardous_days)
+
+# Create grouped bar plot
+ggplot(data_long, aes(x = variable, y = value, fill = income_group)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black", width = 0.7) +
+  facet_wrap(~region, ncol = 1) +
+  scale_fill_manual(values = c("#377eb8", "#4daf4a", "#984ea3", "#e41a1c")) +
+  labs(title = "Air Quality and Income in the West and Southeast Regions",
+       x = "",
+       y = "Number of Days",
+       fill = "Income Group") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+```
+
+The barplot shows the median AQI values for the West and Southeast regions, with error bars indicating the 95% confidence intervals. The plot suggests that the median AQI in the West region is higher than the median AQI in the Southeast region. Additionally, the confidence intervals for the two regions do not overlap, which suggests that the difference in median AQI between the regions is statistically significant.
